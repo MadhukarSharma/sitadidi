@@ -13,7 +13,14 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('sliders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('intro');
+            $table->string('excerpt');
+            $table->string('link');
+            $table->string('link_btn');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sliders');
     }
 }
