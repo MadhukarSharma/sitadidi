@@ -13,7 +13,13 @@ class CreateTestimonialsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('testimonials', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('client_name');
+            $table->string('location');
+            $table->string('review');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateTestimonialsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('testimonials');
     }
 }
