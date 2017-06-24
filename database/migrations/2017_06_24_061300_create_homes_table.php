@@ -13,7 +13,13 @@ class CreateHomesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('homes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tesear');
+            $table->string('description');
+            $table->string('type');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateHomesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('homes');
     }
 }
