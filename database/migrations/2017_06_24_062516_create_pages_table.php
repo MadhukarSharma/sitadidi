@@ -13,7 +13,15 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('pages', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('excerpt');
+            $table->string('description');
+            $table->string('slug');
+            $table->string('type');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('pages');
     }
 }
