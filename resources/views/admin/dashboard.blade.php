@@ -18,7 +18,7 @@
     
      
       <!-- /.row -->
-    </section>si
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
