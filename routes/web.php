@@ -34,7 +34,8 @@ Route::get('/dashboard', function(){
     Route::resource('galaries', 'GalariesController');
     Route::resource('homes', 'HomesController');
     Route::resource('services', 'ServicesController');
-    Route::resource('testimonials', 'TestimonialsController');		
+    Route::resource('testimonials', 'TestimonialsController');
+    Route::resource('pages', 'PagesController');  		
 });
 
 Route::get('/home', function () {
