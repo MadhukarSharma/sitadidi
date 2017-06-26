@@ -20,15 +20,16 @@ Route::get('/dashboard', function(){
 });
 
 
-Route::get('/login', 'Auth\LoginController@showLoginForm' );
-Route::post('/login', 'Auth\LoginController@login');
-Route::post('/logout', 'Auth\LoginController@logout');
+// Route::get('/login', 'Auth\LoginController@showLoginForm' );
+// Route::post('/login', 'Auth\LoginController@login');
+// Route::post('/logout', 'Auth\LoginController@logout');
 
 	Route::group([
 		'as' => 'admin.',
 		'prefix'=>'admin',
     'namespace' => 'Admin',
     'middleware' => ['auth']], function () {
+    Route::get('/dashboard','DashboardController@index');
     Route::resource('chooseus', 'ChooseusController');
     Route::resource('galaries', 'GalariesController');
     Route::resource('homes', 'HomesController');
@@ -39,25 +40,15 @@ Route::post('/logout', 'Auth\LoginController@logout');
 Route::get('/home', function () {
     return view('welcome');
 });
-Route::get('/home', 'HomesController@index');
-Route::get('/chooseus', 'HomesController@index');
-Route::get('/galaries', 'HomesController@index');
-Route::get('/testimonials', 'HomesController@index');
-Route::get('/services', 'HomesController@index');
+Route::get('/home', 'Frontend\HomesController@index');
+Route::get('/chooseus', 'Frontend\ChooseusController@index');
+Route::get('/galaries', 'Frontend\GalariesController@index');
+Route::get('/testimonials', 'Frontend\ServicesController@index');
+Route::get('/services', 'Frontend\TestimonialsController@index');
 
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
+Auth::routes();
+Route::match(['get', 'post'], 'register', function(){
+    return redirect('/');
+});
 
 
