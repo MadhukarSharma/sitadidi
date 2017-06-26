@@ -2,7 +2,7 @@
 
 @extends('admin.includes.header')
 
-@extends('admin.includes.slider')
+@extends('admin.includes.sidebar')
 
 @yield('content')
 
