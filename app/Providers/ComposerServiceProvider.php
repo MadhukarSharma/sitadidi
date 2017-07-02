@@ -13,7 +13,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        '*', 'App\Http\ViewComposers\FotterComposer'
     }
 
     /**
